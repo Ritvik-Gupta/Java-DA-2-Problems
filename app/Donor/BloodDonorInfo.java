@@ -26,10 +26,10 @@ public final class BloodDonorInfo {
       );
 
       constrainedDonationDate = Constrained.compile(
-         "^(3[0-1]|[1-2]\\d|0[1-9])-(1[0-2]|0[1-9])-(19\\d\\d|20([01]\\d|202[01]))$", 
+         "^(3[0-1]|[1-2]\\d|0[1-9])-(1[0-2]|0[1-9])-(19\\d\\d|20([01]\\d|2[01]))$", 
          new PatternSyntaxException(
             "Invalid Donation Date format",
-            "MM-DD-YYYY ( supported years are [1900-2021] )", 
+            "DD-MM-YYYY ( supported years are [1900-2021] )", 
             -1
          )
       );
