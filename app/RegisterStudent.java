@@ -12,7 +12,6 @@ public final class RegisterStudent {
    private static final IConstrainedFor<NoSuchElementException> constrainedRegNo;
    private static final IConstrainedFor<NumberFormatException> constrainedMobileNo;
 
-
    static {
       S = new Scanner(System.in);
       constrainedRegNo = Constrained.compile(

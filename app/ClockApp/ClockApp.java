@@ -24,7 +24,9 @@ public final class ClockApp {
 
       try {
          if (5 <= hour && hour < 12)
-            throw new Reminder("Morning, Have Fresh Vegetable Juice and then Sugar Tablet with mild walking");
+            throw new Reminder(
+               "Morning, Have Fresh Vegetable Juice and then Sugar Tablet with mild walking"
+            );
          else if (12 <= hour && hour < 17)
             throw new Reminder("Its Day Time, after lunch have tablet to avoid sleep");
          else if (17 <= hour && hour < 18.50)

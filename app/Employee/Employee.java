@@ -15,11 +15,11 @@ public final class Employee {
       S = new Scanner(System.in);
       constrainedEmployeeId = Constrained.compile(
          "^([01789]\\d|2[01])-[FS]-\\d{3}$",
-         new InvalidEmployeeCode("ABC") 
+         new InvalidEmployeeCode("Emp ID Date must be in [19(70)-20(21)], followed by F or S") 
       );
       constrainedDateOfBirth = Constrained.compile(
          "^(3[0-1]|[1-2]\\d|0[1-9])(?<D>[-|.])(1[0-2]|0[1-9])\\k<D>(19\\d|20[01])\\d$",
-         new IllegalArgumentException("DEF")
+         new IllegalArgumentException("Invalid Date of Birth format ( DD-MM-YYYY )")
       );
    }
 
@@ -34,7 +34,9 @@ public final class Employee {
    }
 
    public String toString() {
-      return "Employee ID :\t" + employeeId ;
+      return "\nEmployee ID :\t" + this.employeeId 
+      + "\nEmployee Name :\t" + this.name 
+      + "\nDate of Birth :\t" + this.dateOfBirth;
    }
 
    public static void main(String[] args) throws InvalidEmployeeCode {
@@ -49,7 +51,7 @@ public final class Employee {
          Constrained dateOfBirth = constrainedDateOfBirth.with(S.nextLine());
 
          Employee employee = new Employee(employeeId, name, dateOfBirth);
-         Console.log(employee);
+         Console.log("\n", employee);
       } catch (InvalidEmployeeCode err) {
          throw new InvalidEmployeeCode(err);
       } catch (IllegalArgumentException err) {

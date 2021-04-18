@@ -40,11 +40,19 @@ public final class Constrained {
       return compile(emptyFunc, regex, exception, emptyFunc);
    }
 
-   public static <T extends Exception> IConstrainedFor<T> compile(Consumer<String> startupFunc, String regex, T exception) {
+   public static <T extends Exception> IConstrainedFor<T> compile(
+      Consumer<String> startupFunc, 
+      String regex, 
+      T exception
+   ) {
       return compile(startupFunc, regex, exception, emptyFunc);
    }
 
-   public static <T extends Exception> IConstrainedFor<T> compile(String regex, T exception, Consumer<String> cleanupFunc) {
+   public static <T extends Exception> IConstrainedFor<T> compile(
+      String regex, 
+      T exception, 
+      Consumer<String> cleanupFunc
+   ) {
       return compile(emptyFunc, regex, exception, cleanupFunc);
    }
 
